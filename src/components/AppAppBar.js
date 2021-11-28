@@ -12,14 +12,14 @@ function AppAppBar() {
 
     return (
         <div>
-            <AppBar position="fixed" sx={{ bgcolor:'secondary.light'}}>
+            <AppBar position="fixed" sx={{ bgcolor:'#08192b'}}>
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
                     <Box sx={{ flex: 1 }} />
                     <Link
                         variant="h6"
                         underline="none"
                         color="inherit"
-                        href="#"
+                        href="/"
                         sx={{ fontSize: 24 }}
                     >
                         {'Easy Eats'}
@@ -28,7 +28,7 @@ function AppAppBar() {
 
                         <Button
                             sx={{ ml: 3}}
-                            onClick={()=>{navigate('/signin')}}
+                            onClick={()=>{navigate('/login')}}
                         >
                             <Typography sx={{
                                 fontSize:'16',
@@ -43,7 +43,7 @@ function AppAppBar() {
                         >
                             <Typography sx={{
                                 fontSize:'16',
-                                color: '#757575'
+                                color: '#69F0AE'
                             }}>
                                 Sign Up
                             </Typography>

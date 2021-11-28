@@ -5,7 +5,7 @@ import Github from '../assets/images/github.svg';
 
 function Copyright(props) {
     return (
-        <Typography variant="caption" color="text.secondary" align="center" {...props}>
+        <Typography variant="caption" color="common.white" align="center" {...props}>
             {'Copyright © '}
             <Link color="inherit" href="#">
                 Easy Eats
@@ -24,8 +24,11 @@ const iconStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'secondary.light',
+    backgroundColor: '#869fb2',
     mr: 1,
+    '&:hover': {
+        bgcolor: '#90CAF9',
+    },
 };
 
 function AppFooter(props) {
@@ -33,7 +36,8 @@ function AppFooter(props) {
         <Typography
             component="footer"
             sx={{ display: 'flex',
-                bgcolor: 'secondary.light',
+                color:'common.white',
+                bgcolor: '#08192b',
                 position:'fixed',
                 bottom:0,
                 left: 0,
@@ -42,8 +46,8 @@ function AppFooter(props) {
         >
             <Container sx={{ my: 5, display: 'flex' }}>
                 <Grid container spacing={5}>
-                    <Grid item xs={6} sm={4} md={3}>
-                        <Typography variant="h6" marked="left" sx={{textAlign:'left'}} gutterBottom>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Typography color='white' variant="h6" marked="left" sx={{textAlign:'left'}} gutterBottom>
                             Social media
                         </Typography>
                         <Grid
@@ -72,28 +76,51 @@ function AppFooter(props) {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item xs={6} sm={4} md={2}>
-                        <Typography variant="h6" marked="left" sx={{textAlign:'left'}} gutterBottom>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <Typography color='white' variant="h6" marked="left" sx={{textAlign:'left'}} gutterBottom>
                             About
                         </Typography>
                         <Box component="ul" sx={{ m: 0, listStyle: 'none', p: 0, alignItems: 'start', textAlign:'left'}}>
-                            <Box component="li" sx={{ py: 0.5, }}>
-                                <Link href="#"  color="inherit">Easy Eats</Link>
+                            <Box component="li" sx={{ py: 0.5,
+                                ":hover": {
+                                    color: '#90CAF9'
+                                }
+                            }}>
+                                <Link href="#"  color="inherit"
+                                >Easy Eats</Link>
                             </Box>
-                            <Box component="li" sx={{ py: 0.5 }}>
-                                <Link href="#"  color="inherit">Me</Link>
+                            <Box component="li" sx={{
+                                py: 0.5,
+                                ":hover": {
+                                    color: '#90CAF9'
+                                } }}>
+                                <Link href="#"  color="inherit"  >Me</Link>
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item xs={6} sm={4} md={2}>
-                        <Typography variant="h6" marked="left" sx={{textAlign:'left'}} gutterBottom>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <Typography color='white' variant="h6" marked="left" sx={{textAlign:'left'}} gutterBottom>
                             Other
                         </Typography>
                         <Box component="ul" sx={{ m: 0, listStyle: 'none', p: 0, alignItems: 'start', textAlign:'left'}}>
-                            <Box component="li" sx={{ py: 0.5, }}>
+                            <Box component="li"
+                                 sx={{
+                                     py: 0.5,
+                                    ":hover": {
+                                        color: '#90CAF9'
+                                    }
+                                 }}
+                            >
                                 <Link href="#"  color="inherit">Easy Eats - Gourmet</Link>
                             </Box>
-                            <Box component="li" sx={{ py: 0.5 }}>
+                            <Box component="li"
+                                 sx={{
+                                     py: 0.5,
+                                     ":hover": {
+                                         color: '#90CAF9'
+                                     }
+                                 }}
+                            >
                                 <Link href="#"  color="inherit">...</Link>
                             </Box>
                         </Box>
