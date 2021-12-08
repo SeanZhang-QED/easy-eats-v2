@@ -7,7 +7,7 @@ function AppBar(props) {
     return <MuiAppBar elevation={0} position="fixed" {...props} />;
 }
 
-function AppAppBar() {
+function AppAppBar(props) {
     const navigate = useNavigate();
 
     return (

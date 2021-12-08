@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link, Navigate, useNavigate} from "react-router-dom";
 import {
     Backdrop,
@@ -16,15 +16,17 @@ import {Visibility, VisibilityOff} from "@mui/icons-material";
 import theme from "../theme";
 import {login} from "../utils/apis";
 import Message from "./Message";
+import axios from "axios";
 
 function Login(props) {
     const { isLogged, handleLogged } = props;
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [ isSubmitting, setIsSubmitting ] = useState(false);
     const [ isPEmpty, setIsPEmpty ] = useState(false);
     const [ isUEmpty, setIsUEmpty ] = useState(false);
-    const [showPassword, setShowPassword] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const [errorMessage, setErrorMessage] = useState();
+    const [ showPassword, setShowPassword ] = useState(false);
+    const [ isError, setIsError ] = useState(false);
+    const [ errorMessage, setErrorMessage ] = useState();
+    const [ willNaviTo, setWillNaviTo] = useState(false);
 
     const navigate = useNavigate();
 
@@ -32,24 +34,35 @@ function Login(props) {
         // 1. get the form data
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-
         // 2. set isSubmitting to true
         setIsSubmitting(true);
         // 3. dent data to the backend
-        login(data)
-            .then(() => {
-                // case 1: success -> navigate to main
-                setIsSubmitting(false);
-                handleLogged();
-                navigate('/main');
+        const opt = {
+            method: "POST",
+            url: `/authenticate`,
+            data: {
+                email: data.get('username'),
+                password: data.get('password')
+            },
+            headers: { "Content-Type": "application/json" }
+        };
+        axios(opt)
+            .then((res) => {
+                if (res.status === 200) {
+                    // case 1: success -> navigate to main
+                    const { data } = res;
+                    // console.log("received the response: \n", data);
+                    handleLogged(data);
+                    // setIsSubmitting(false);
+                    navigate('/main');
+                }
             })
             .catch((err) => {
                 // case 2: inform the user
                 setIsError(true);
                 // console.log(err);
                 setErrorMessage('Fail to log in');
-            })
-            .finally(() => {
+                console.log("login failed: ", err.message);
                 setIsSubmitting(false);
             });
     };
@@ -107,9 +120,10 @@ function Login(props) {
                                         required
                                         fullWidth
                                         id="username"
-                                        label="User Name"
+                                        label="UserName"
                                         name="username"
                                         autoComplete="username"
+                                        placeholder="Email Address/Username"
                                         autoFocus
                                         error={isUEmpty}
                                         helperText={isUEmpty ? 'Email is required':''}
