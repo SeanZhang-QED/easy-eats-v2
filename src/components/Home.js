@@ -1,6 +1,6 @@
 import React from 'react';
-import AppAppBar from "./AppAppBar";
-import AppFooter from "./AppFooter";
+import HomeAppBar from "./HomeAppBar";
+import HomeFooter from "./HomeFooter";
 import {ThemeProvider} from "@mui/material/styles";
 import theme from "../theme";
 import {CssBaseline} from "@mui/material";
@@ -13,11 +13,11 @@ function Home(props) {
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
                 <React.Fragment>
-                    <AppAppBar/>
+                    <HomeAppBar/>
                     <p>
                         this is home page.
                     </p>
-                    <AppFooter/>
+                    <HomeFooter/>
                 </React.Fragment>
             </ThemeProvider>
         ) : (

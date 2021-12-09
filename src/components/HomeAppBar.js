@@ -1,60 +1,63 @@
 import React from 'react';
 import MuiAppBar from '@mui/material/AppBar';
-import {Box, Button, Toolbar,Link, Typography} from "@mui/material";
+import {Box, Button, Toolbar, Link, Typography} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
 function AppBar(props) {
     return <MuiAppBar elevation={0} position="fixed" {...props} />;
 }
 
-function AppAppBar(props) {
+function HomeAppBar(props) {
     const navigate = useNavigate();
 
     return (
         <div>
-            <AppBar position="fixed" sx={{ bgcolor:'#08192b'}}>
-                <Toolbar sx={{ justifyContent: 'space-between' }}>
-                    <Box sx={{ flex: 1 }} />
+            <AppBar position="fixed" sx={{bgcolor: '#757575'}}>
+                <Toolbar sx={{justifyContent: 'space-between'}}>
+                    <Box sx={{flex: 1}}/>
                     <Link
                         variant="h6"
                         underline="none"
                         color="inherit"
                         href="/"
-                        sx={{ fontSize: 24 }}
+                        sx={{fontSize: 24}}
                     >
                         {'Easy Eats'}
                     </Link>
-                    <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+                    <Box sx={{flex: 1, display: 'flex', justifyContent: 'flex-end'}}>
 
                         <Button
-                            sx={{ ml: 3}}
-                            onClick={()=>{navigate('/login')}}
+                            sx={{ml: 3}}
+                            onClick={() => {
+                                navigate('/login')
+                            }}
                         >
                             <Typography sx={{
-                                fontSize:'16',
+                                fontSize: '16',
                                 color: 'common.white'
                             }}>
                                 Sign in
                             </Typography>
                         </Button>
                         <Button
-                            sx={{ ml: 3}}
-                            onClick={()=>{navigate('/register')}}
+                            sx={{ml: 3}}
+                            onClick={() => {
+                                navigate('/register')
+                            }}
                         >
                             <Typography sx={{
-                                fontSize:'16',
-                                color: '#69F0AE'
+                                fontSize: '16',
+                                color: 'common.white'
                             }}>
                                 Sign Up
                             </Typography>
                         </Button>
-
                     </Box>
                 </Toolbar>
             </AppBar>
-            <Toolbar />
+            <Toolbar/>
         </div>
     );
 }
 
-export default AppAppBar;
+export default HomeAppBar;

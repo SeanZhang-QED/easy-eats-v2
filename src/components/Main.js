@@ -22,7 +22,7 @@ function Main(props) {
                 </React.Fragment>
             </ThemeProvider>
         ) : (
-            <Navigate to={'/login'} />
+            <Navigate to={'/home'} />
         )
 
     )

@@ -24,20 +24,20 @@ const iconStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#869fb2',
+    // backgroundColor: '#869fb2',
     mr: 1,
     '&:hover': {
-        bgcolor: '#90CAF9',
+        bgcolor: '#9E9E9E',
     },
 };
 
-function AppFooter(props) {
+function HomeFooter(props) {
     return (
         <Typography
             component="footer"
             sx={{ display: 'flex',
                 color:'common.white',
-                bgcolor: '#08192b',
+                bgcolor: '#757575',
                 position:'fixed',
                 bottom:0,
                 left: 0,
@@ -83,7 +83,7 @@ function AppFooter(props) {
                         <Box component="ul" sx={{ m: 0, listStyle: 'none', p: 0, alignItems: 'start', textAlign:'left'}}>
                             <Box component="li" sx={{ py: 0.5,
                                 ":hover": {
-                                    color: '#90CAF9'
+                                    color: '#9E9E9E'
                                 }
                             }}>
                                 <Link href="#"  color="inherit"
@@ -92,7 +92,7 @@ function AppFooter(props) {
                             <Box component="li" sx={{
                                 py: 0.5,
                                 ":hover": {
-                                    color: '#90CAF9'
+                                    color: '#9E9E9E'
                                 } }}>
                                 <Link href="#"  color="inherit"  >Me</Link>
                             </Box>
@@ -107,7 +107,7 @@ function AppFooter(props) {
                                  sx={{
                                      py: 0.5,
                                     ":hover": {
-                                        color: '#90CAF9'
+                                        color: '#9E9E9E'
                                     }
                                  }}
                             >
@@ -134,4 +134,4 @@ function AppFooter(props) {
     );
 }
 
-export default AppFooter;
+export default HomeFooter;
