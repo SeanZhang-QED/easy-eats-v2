@@ -197,12 +197,13 @@ function Register(props) {
                                 type="submit"
                                 fullWidth
                                 variant="contained"
+                                disabled={isSubmitting}
                                 sx={{
                                     mt: 3, mb: 2, bgcolor: 'warning.dark',
                                     ':hover': {bgcolor: '#D84315'}
                                 }}
                             >
-                                Sign Up
+                                {isSubmitting ? 'In progress' : 'Sign Up'}
                             </Button>
                             <Divider/>
                             <Grid container justifyContent="center">
