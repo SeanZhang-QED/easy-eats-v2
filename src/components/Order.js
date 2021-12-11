@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Cart(props) {
+function Order(props) {
     return (
         <div>
             this page shows the cart info.
@@ -8,4 +8,4 @@ function Cart(props) {
     );
 }
 
-export default Cart;
+export default Order;

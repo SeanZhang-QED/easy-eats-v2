@@ -4,16 +4,19 @@ import {Outlet, useLocation} from 'react-router-dom';
 import MainContent from "./MainContent";
 import {Navigate} from "react-router-dom";
 import {ThemeProvider} from "@mui/material/styles";
-import {CssBaseline} from "@mui/material";
+import {CssBaseline, Toolbar} from "@mui/material";
+import MainAppBar from "./MainAppBar";
 
 function Main(props) {
-    const { isLogged } = props;
+    const { isLogged, handleLogOut } = props;
 
     let location = useLocation();
 
     return ( isLogged ? (
             <ThemeProvider theme={theme}>
                 <CssBaseline />
+                <MainAppBar handleLogOut={handleLogOut}/>
+                <Toolbar />
                 <React.Fragment>
                     <div>
                         {location.pathname === '/main' ? <MainContent /> : ''}

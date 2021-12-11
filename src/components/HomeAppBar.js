@@ -12,7 +12,7 @@ function HomeAppBar(props) {
 
     return (
         <div>
-            <AppBar position="fixed" sx={{bgcolor: '#757575'}}>
+            <AppBar position="fixed" sx={{bgcolor: 'primary.main'}}>
                 <Toolbar sx={{justifyContent: 'space-between'}}>
                     <Box sx={{flex: 1}}/>
                     <Link
@@ -25,7 +25,6 @@ function HomeAppBar(props) {
                         {'Easy Eats'}
                     </Link>
                     <Box sx={{flex: 1, display: 'flex', justifyContent: 'flex-end'}}>
-
                         <Button
                             sx={{ml: 3}}
                             onClick={() => {
