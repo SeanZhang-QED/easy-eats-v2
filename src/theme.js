@@ -99,7 +99,7 @@ const theme = {
         },
         body2: {
             ...rawTheme.typography.body1,
-            fontSize: 14,
+            fontSize: 12,
         },
     },
 };

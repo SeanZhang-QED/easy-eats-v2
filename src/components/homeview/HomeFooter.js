@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Container, Grid, Link, Typography} from "@mui/material";
-import Linkedin from '../assets/images/linkedin.svg';
-import Github from '../assets/images/github.svg';
+import Linkedin from '../../assets/images/linkedin.svg';
+import Github from '../../assets/images/github.svg';
 
 function Copyright(props) {
     return (

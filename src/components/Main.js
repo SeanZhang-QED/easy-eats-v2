@@ -1,11 +1,11 @@
 import React from 'react';
 import theme from "../theme";
 import {Outlet, useLocation} from 'react-router-dom';
-import MainContent from "./MainContent";
+import MainContent from "./mainview/MainContent";
 import {Navigate} from "react-router-dom";
 import {ThemeProvider} from "@mui/material/styles";
 import {CssBaseline, Toolbar} from "@mui/material";
-import MainAppBar from "./MainAppBar";
+import MainAppBar from "./mainview/MainAppBar";
 
 function Main(props) {
     const { isLogged, handleLogOut } = props;
